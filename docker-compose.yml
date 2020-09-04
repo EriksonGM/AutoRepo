@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  autorepo.ui:
+    image: ${DOCKER_REGISTRY-}autorepoui
+    container_name: AutoRepo
+    build:
+      context: .
+      dockerfile: AutoRepo.UI/Dockerfile
+    volumes:
+      - "/app"
