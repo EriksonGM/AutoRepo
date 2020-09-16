@@ -4,25 +4,37 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome - @ViewData["NIF"]</h1>
+    <p>v 0.3.6</p>
 </div>
+
+
 
 @{
     var files = Directory.GetCurrentDirectory();
 }
 
 <h2>@files</h2>
-<hr/>
 
-@foreach (var f in Directory.GetDirectories($"{Directory.GetCurrentDirectory()}/Storage"))
+<hr />
+
+@foreach (var f in Directory.GetDirectories(Directory.GetCurrentDirectory()))
 {
     <p>@f</p>
 }
 
 <hr />
 
-@foreach (var f in Directory.GetFiles(Directory.GetCurrentDirectory()))
+@*@foreach (var f in Directory.GetFiles(Directory.GetCurrentDirectory()))
+{
+    <p>@f</p>
+}*@
+
+
+@foreach (var f in Directory.GetFiles($"{Directory.GetCurrentDirectory()}/data"))
 {
     <p>@f</p>
 }
+
+
+

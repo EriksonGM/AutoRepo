@@ -1,0 +1,52 @@
+﻿@model ReportDTO
+@{
+    if (Model.IdReport.HasValue)
+    {
+        ViewData["Title"] = "Edit Report";
+    }
+    else
+    {
+        ViewData["Title"] = "Create Report";
+    }
+
+    ViewData["Icon"] = "fa fa-file-alt";
+}
+
+
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <input asp-for="IdMailAccount" hidden/>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" required class="form-control"/>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Subject"></label>
+        <input asp-for="Subject" required class="form-control"/>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Boby"></label>
+        <input asp-for="Boby" required class="form-control"/>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IdMailAccount"></label>
+        <select asp-for="Mail" asp-items="Model.MailAccountList" class="form-control"></select>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="IsHtml"/>
+        <label asp-for="IsHtml"></label>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <p class="text-right">
+        <a class="btn btn-primary" asp-controller="Report" asp-action="Index"><i class="fa fa-reply mr-3"></i>Cancel</a>
+        <a class="btn btn-primary" asp-controller="Report" asp-action="Test"><i class="fa fa-paper-plane mr-3"></i>Test</a>
+        <button class="btn btn-success " asp-controller="Report" asp-action="Edit"><i class="fa fa-save mr-3"></i>Save</button>
+    </p>
+
+</form>

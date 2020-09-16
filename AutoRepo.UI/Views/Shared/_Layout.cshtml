@@ -20,7 +20,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Report" asp-action="Index"><i class="fa fa-pagelines mr-2"></i>Reports</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Report" asp-action="Index"><i class="fa fa-file-alt mr-2"></i>Reports</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="DataSource" asp-action="Index"><i class="fa fa-database mr-2"></i>Data Sources</a>
@@ -35,6 +35,11 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            <h2 class="mb-3">
+                <i class="@ViewData["Icon"]"></i> @ViewData["Title"]
+    
+            </h2>
+            <hr/>
             @RenderBody()
         </main>
     </div>

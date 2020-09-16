@@ -1,0 +1,48 @@
+﻿@model MailAccountDTO
+@{
+    if (Model.IdMailAccount.HasValue)
+    {
+        ViewData["Title"] = "Edit Mail Account";
+    }
+    else
+    {
+        ViewData["Title"] = "Create Mail Account";
+    }
+
+    ViewData["Icon"] = "fa fa-envelope";
+}
+
+
+<form method="post">
+    <input asp-for="IdMailAccount" hidden/>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" required class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Server"></label>
+        <input asp-for="Server" required class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Port"></label>
+        <input asp-for="Port" required class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Username"></label>
+        <input asp-for="Username" required class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" required class="form-control"/>
+    </div>
+    <div class="form-group">
+        <input asp-for="UseSSL" required/>
+        <label asp-for="UseSSL"></label>
+    </div>
+    <p class="text-right">
+        <a class="btn btn-primary" asp-controller="MailAccount" asp-action="Index"><i class="fa fa-reply mr-2"></i>Cancel</a>
+        <button class="btn btn-info " asp-controller="MailAccount" asp-action="Test"><i class="fa fa-paper-plane mr-2"></i>Test</button>
+        <button class="btn btn-success " asp-controller="MailAccount" asp-action="Create"><i class="fa fa-save mr-2"></i>Save</button>
+    </p>
+
+</form>

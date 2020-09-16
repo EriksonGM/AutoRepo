@@ -1,8 +1,46 @@
-﻿
+﻿@model AutoRepo.UI.Helpers.DataCollection<MailAccountDTO>
 @{
     ViewData["Title"] = "Mail Accounts";
-    ViewData["Icon"] = "fa fa-database";
+    ViewData["Icon"] = "fa fa-envelope";
+
+    var page = 0;
 }
 
-<h3 class="display-4"><i class="@ViewData["Icon"]"></i> @ViewData["Title"]</h3>
+
+<div>
+    <a class="btn btn-primary float-left" asp-controller="MailAccount" asp-action="Create"><i class="fa fa-plus-circle mr-2"></i>New Mail Account</a>
+    <div class="justify-content-center">
+        
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+            <li class="page-item @(Model.Page == 1 ? "disabled" : "")">
+                <a class="page-link" asp-controller="MailAccount" asp-action="Index" asp-route-id="@(Model.Page-1)">Anterior</a>
+            </li>
+            <li class="page-item @(Model.Pages == Model.Page ? "disabled" : "")">
+                <a class="page-link" asp-controller="MailAccount" asp-action="Index" asp-route-id="@(Model.Page+1)">Seguinte</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<table class="table table-hover table-bordered mt-3">
+    <tr>
+        <th style="width: 10px"></th>
+        <th>Description</th>
+        <th>Server</th>
+        <th>Port</th>
+    </tr>
+    @foreach (var m in Model.Items)
+    {
+        <tr>
+            <td>
+                <a class="btn btn-primary btn-sm" asp-controller="MailAccount" asp-action="Create" asp-route-id="@m.IdMailAccount"><i class="fa fa-edit"></i></a>
+            </td>
+            <td>@m.Description</td>
+            <td>@m.Server</td>
+            <td>@m.Port</td>
+        </tr>
+    }
+</table>
 
