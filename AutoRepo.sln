@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRepo.UI", "AutoRepo.UI\AutoRepo.UI.csproj", "{A4169CEC-FA8C-46CA-9B5E-908308ACEA35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoRepo.UI", "AutoRepo.UI\AutoRepo.UI.csproj", "{A4169CEC-FA8C-46CA-9B5E-908308ACEA35}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A0E193E9-1CF8-4190-B987-0F799A0DF23A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRepo.Data", "AutoRepo.Data\AutoRepo.Data.csproj", "{E81B175A-F5DC-451B-97D5-8C4FEEF57971}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoRepo.Data", "AutoRepo.Data\AutoRepo.Data.csproj", "{E81B175A-F5DC-451B-97D5-8C4FEEF57971}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRepo.Services", "src\AutoRepo.Services\AutoRepo.Services.csproj", "{EDFA0C64-46CD-45C3-B08B-5064DE38F5C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{E81B175A-F5DC-451B-97D5-8C4FEEF57971}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E81B175A-F5DC-451B-97D5-8C4FEEF57971}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E81B175A-F5DC-451B-97D5-8C4FEEF57971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDFA0C64-46CD-45C3-B08B-5064DE38F5C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDFA0C64-46CD-45C3-B08B-5064DE38F5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDFA0C64-46CD-45C3-B08B-5064DE38F5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDFA0C64-46CD-45C3-B08B-5064DE38F5C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

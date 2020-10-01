@@ -31,6 +31,8 @@ namespace AutoRepo.UI
 
             services.AddControllersWithViews();
 
+            var conn = Configuration.GetValue("NIF", "000000000000");
+
             services.AddOptions();
 
             services.AddHealthChecks();
